@@ -6,5 +6,5 @@ class Player():
         print('No seu turno digite a linha e a coluna nessa ordem e com um espaço entre eles. Assim:')
         print('0 0')
 
-    def play(self):
+    def play(self, board):
         return tuple(int(i) for i in input('Digite coordenada. . .\n').split(' '))

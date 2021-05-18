@@ -10,7 +10,7 @@ class Game():
         self.winner = -1 # -1: Em jogo; 0: X; 1: O; 2: Empate
     
     def turn(self):
-        pos = self.player[self.player_turn].play() # A funcao Play precisa retornar uma tupla (row, col)
+        pos = self.player[self.player_turn].play(self.board) # A funcao Play precisa retornar uma tupla (row, col)
         if pos[0] > 2 or pos[1] > 2 or pos[0] < 0 or pos[1] < 0: 
             print('O jogador {} tentou jogar em um espaço que não existe'.format(self.player_piece[self.player_turn]))
         elif self.board[pos] == ' ': 
@@ -19,8 +19,7 @@ class Game():
             self.player_turn = abs(self.player_turn - 1)
         else: 
             print('O jogador {} tentou jogar em um espaço já ocupado'.format(self.player_piece[self.player_turn]))
-        
-    
+
     def verify_end(self):
         math_board = self.math_board()
         if (abs(math_board[0,0] + math_board[1,1] + math_board[2,2]) == 3 or
