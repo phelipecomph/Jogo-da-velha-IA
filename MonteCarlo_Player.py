@@ -2,7 +2,7 @@ import numpy as np
 import random
 
 class Player():
-    def __init__(self, id, ite=10000):
+    def __init__(self, id, ite=1000):
         self.id = id
         self.pieces = ['X','O']
         self.ite = ite
